@@ -17,7 +17,7 @@
 
 # Requeridos: NodeJs, Redis
 ## Instalar NodeJs
-###Si estas en Linux/MacOs
+### Si estas en Linux/MacOs
 https://nodejs.org/es/download/package-manager/
 ### Si estas en Windows 
 https://nodejs.org/es/download/
