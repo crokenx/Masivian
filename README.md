@@ -40,3 +40,14 @@ https://riptutorial.com/es/redis/example/29962/instalacion-y-ejecucion-de-redis-
 ### 3. http://localhost:4000/makeBet (Apuesta a un numero, tipo post)
 ### 4. http://localhost:4000/closeRouletteById/:roulette_id (Cierre de ruleta, tipo post)
 ### 2. http://localhost:4000/getRoulettes (Listado de ruletas con su estado, tipo get)
+### Ejemplos Json para hacer apuesta 
+
+### {
+###    "value":"5000",
+###    "colour":"black"
+### }
+
+### {
+###    "value":"5000",
+###    "betNumber":"black"
+### }

@@ -50,12 +50,11 @@ router.post("/closeRouletteById/:id", (req, res) => {
         const BET = JSON.parse(bet);
         const betRoulette_id = BET.betRoulette_id;
         if (betRoulette_id === roulette_id) {
-          const betResult = bettingEvaluation(
-            rouletteNumber,
+          const betObject = {rouletteNumber,
             BET.number,
             BET.value,
-            BET.colour
-          );
+            BET.colour}
+          const betResult = bettingEvaluation(betObject);
           bettingResults.push(betResult);
         }
       })
@@ -66,12 +65,8 @@ router.post("/closeRouletteById/:id", (req, res) => {
     res.status(201).json(bettingResults);
   });
 });
-const bettingEvaluation = (
-  rouletteNumber: number,
-  betNumber: number,
-  bet: number,
-  betColour: string
-) => {
+const bettingEvaluation = (betObject) => {
+  const { rouletteNumber, betNumber, bet, betColour} = betObject
   const rouletteColour = rouletteNumber % 2 === 1 ? "black" : "red";
   if (betNumber === rouletteNumber) {
     return {
