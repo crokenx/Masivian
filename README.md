@@ -35,8 +35,8 @@ https://riptutorial.com/es/redis/example/29962/instalacion-y-ejecucion-de-redis-
 
 # Usage
 ## Desde Postman
-### 1. http://localhost:4000/createRoulette (Creacion de ruletas)
-### 2. http://localhost:4000/openRoulette/:roulette_id (Apertura de ruleta)
-### 3. http://localhost:4000/makebet (Apuesta a un numero)
-### 4. http://localhost:4000/closeRoulette/:roulette_id (Cierre de ruleta)
-### 2. http://localhost:4000/getRoulettes (Listado de ruletas con su estado)
+### 1. http://localhost:4000/createRoulette (Creacion de ruletas, tipo get)
+### 2. http://localhost:4000/openRouletteById/:roulette_id (Apertura de ruleta, tipo post)
+### 3. http://localhost:4000/makeBet (Apuesta a un numero, tipo post)
+### 4. http://localhost:4000/closeRouletteById/:roulette_id (Cierre de ruleta, tipo post)
+### 2. http://localhost:4000/getRoulettes (Listado de ruletas con su estado, tipo get)

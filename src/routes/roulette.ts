@@ -16,14 +16,14 @@ router.get("/getRoulettes", (req, res) => {
     res.status(201).json(reply);
   });
 });
-router.post("/openRoulette/:id", (req: any, res: any) => {
+router.post("/openRouletteById/:id", (req: any, res: any) => {
   const roulette_id: string = req.params.id;
   client.hset("roulettes", roulette_id, "open", (err: any, reply: any) => {
     if (err) return res.status(400).json(err);
     res.status(201).json({ roulette_id, message: "roulette is running" });
   });
 });
-router.post("/makebet", async (req: any, res: any) => {
+router.post("/makeBet", async (req: any, res: any) => {
   if (!req.headers.user_id)
     return res
       .status(400)
@@ -40,7 +40,7 @@ router.post("/makebet", async (req: any, res: any) => {
     res.status(201).json({ bet_id, apuesta: userBet });
   });
 });
-router.post("/closeRoulette/:id", (req, res) => {
+router.post("/closeRouletteById/:id", (req, res) => {
   const roulette_id = req.params.id;
   const rouletteNumber = Math.floor(Math.random() * (36 - 0 + 0)) + 0;
   const bettingResults: Bet[] = [];
